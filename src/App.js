@@ -1,4 +1,6 @@
 import "./App.css";
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Dictionary from "./Dictionary";
 
 function App() {
@@ -6,7 +8,9 @@ function App() {
     <div className="App">
       <div claassName="container"></div>
       <header className="App-header">
-        <p>Dictionary App</p>
+        <p>
+          <center>Dictionary App</center>
+        </p>
       </header>
       <main>
         <Dictionary />

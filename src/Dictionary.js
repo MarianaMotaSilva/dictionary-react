@@ -1,31 +1,24 @@
 import React, { useState } from "react";
-import axios from "axios";
-import Results from "./Results";
 import "./Dictionary.css";
+import Results from "./Results";
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 
 export default function Dictionary() {
-  let [keyword, setKeyword] = useState("");
-  let [results, setResults] = useSate({});
+  let [keyword, setKeyword] = useState(null);
+  let [results, setResults] = useState(null);
 
-  function handleResponse(response) {
-    console.log(response.data[0]);
-    setResults(response.data[0]);
+  function handleReponse(response) {
+    console.log(response.data);
+    setResults(response.data);
   }
 
   function search(event) {
     event.preventDefault();
-
-    if (keyword) {
-      let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
-      axios
-        .get(apiUrl)
-        .then(handleResponse)
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
-    } else {
-      console.error("Keyword is empty. Please enter a valid word.");
-    }
+    let apiKey = "00a3d0oe3b36e11ff9bf2a3fd4b8t806";
+    let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
+    axios.get(apiUrl).then(handleReponse);
   }
 
   function handleKeywordChange(event) {
@@ -34,10 +27,17 @@ export default function Dictionary() {
 
   return (
     <div className="Dictionary">
-      <form onSubmit={search}>
-        <input type="search" onChange={handleKeywordChange} />
-        <button type="submit">Search</button>{" "}
+      <form onSubmit={search} className="d-flex justify-content-center mt-3">
+        <input
+          type="search"
+          placeholder="Enter in a word"
+          onChange={handleKeywordChange}
+        ></input>
+        <input type="submit" value="Define" className="ms-2"></input>
       </form>
+      <div className="mt-3">
+        <Results results={results} />
+      </div>
     </div>
   );
 }

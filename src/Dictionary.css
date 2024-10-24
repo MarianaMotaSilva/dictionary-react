@@ -1,0 +1,38 @@
+.Dictionary section {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0 0 0 / 10%);
+  margin: 20px 0;
+}
+
+.Dictionary input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.Dictionary .hint {
+  font-size: 12px;
+  color: #666;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.Dictionary h1 {
+  font-size: 29px;
+  text-align: left;
+  margin-bottom: 20px;
+  color: #000000;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+@media (max-width: 480px) {
+  .Dictionary h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}

@@ -1,0 +1,65 @@
+.Phonetic-first-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.Phonetic-audio {
+  background-color: #f2e3ba;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  margin: 0;
+}
+
+.Phonetic-placeholder {
+  width: 45px;
+  height: 45px;
+}
+
+.Phonetic-audio:hover {
+  background-color: #decc9f;
+}
+
+.Phonetic-word {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.Phonetic-text {
+  font-size: 18px;
+  color: #555;
+  margin-top: 5px;
+}
+
+@media (max-width: 480px) {
+  .Phonetic-first-row {
+    gap: 8px;
+  }
+
+  .Phonetic-audio,
+  .Phonetic-placeholder {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .Phonetic-word {
+    font-size: 20px;
+  }
+
+  .Phonetic-text {
+    font-size: 16px;
+  }
+}

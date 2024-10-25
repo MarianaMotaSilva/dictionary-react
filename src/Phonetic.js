@@ -13,7 +13,7 @@ export default function Phonetic(props) {
               audio.play();
             }}
           >
-            🔊
+            🎙️
           </button>
         )}
       </div>
